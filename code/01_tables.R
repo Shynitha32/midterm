@@ -14,26 +14,26 @@ library(knitr)
 
 table_one <- data |>
   select(
-    pathogen_target,
+    pcr_target,
     population_served,
-    site_wval,
-    site_wval_category
+    wval,
+    wval_category
   ) |>
   tbl_summary(
-    by = pathogen_target,
+    by = pcr_target,
     statistic = list(
       population_served ~ "{median} ({p25}, {p75})",
-      site_wval ~ "{median} ({p25}, {p75})",
-      site_wval_category ~ "{n} ({p}%)"
+      wval ~ "{median} ({p25}, {p75})",
+      wval_category ~ "{n} ({p}%)"
     ),
     label = list(
       population_served ~ "Population Served",
-      site_wval ~ "Wastewater Viral Activity Level",
-      site_wval_category ~ "Viral Activity Category"
+      wval ~ "Wastewater Viral Activity Level",
+      wval_category ~ "Viral Activity Category"
     ),
     missing = "no"
   ) |>
-  add_overall() |>
+#  add_overall() |>
   bold_labels() |>
   modify_caption(
   "**Table 1. Wastewater Surveillance Characteristics by Pathogen Target**"
@@ -48,7 +48,7 @@ saveRDS(
 )
 
 table_two <- data |>
-  group_by(pathogen_target) |>
+  group_by(pcr_target) |>
   summarize(
     `Number of Observations` = n(),
     `Unique Sites` = n_distinct(site),
@@ -59,7 +59,7 @@ table_two <- data |>
 table_two <- table_two |>
   gt() |>
   cols_label(
-    pathogen_target = "Pathogen"
+    pcr_target = "Pathogen"
   ) |>
   tab_header(
     title = "Wastewater Surveillance Coverage by Pathogen"

@@ -44,6 +44,10 @@ This report utilizes the CDC Wastewater Viral Activity Level (WVAL), which recor
 **sample_location**: Sample collection location in the wastewater system, whether at a wastewater treatment plant  or upstream in the wastewater system.
 **pcr_target_detect**: The target of the PCR quantification (pathogen or antimicrobial resistance (AMR) groups).
 **sample_matrix**: Wastewater matrix from which the sample was collected. Wastewater matrix is a categorical variable specifying the type of wastewater sample used (e.g., raw influent, primary sludge, settled solids).
+***wval***:The calculated site wastewater viral activity level (WVAL) for the CDC/MMWR reporting week.
+***wval_category***:	Category for the calculated site WVAL for the CDC/MMWR reporting week. Categories are ordinal based on pathogen specific cut-offs of WVAL values: very low, low, moderate, high, very high; and includes a 'limited/no data' category when there is insufficient data to calculate a WVAL.
+
+
 
 ```{r, load-data}
 here::i_am(
@@ -92,3 +96,4 @@ SARS-CoV-2 had the greatest surveillance coverage, with 18,289 observations from
 https://www.cdc.gov/wastewater/about-data/index.html
 https://pmc-ncbi-nlm-nih-gov.proxy.library.emory.edu/articles/PMC11312382/
 https://www.nature.com/articles/s41370-024-00683-w#citeas
+https://www-cdc-gov.proxy.library.emory.edu/wastewater/about/wval.html

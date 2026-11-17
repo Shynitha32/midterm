@@ -29,7 +29,7 @@ The report will include:
 ## Data Source
 
 CDC RSV wastewater surveillance data, subsetted to Georgia.
-DISCLAIMER: DATA was actually filtered for RSV not SARS-CoV-2. 
+## DISCLAIMER: DATA was actually filtered for RSV not SARS-CoV-2. 
 
 
 **record_id**: A unique identifier for each row of data.
@@ -54,7 +54,9 @@ DISCLAIMER: DATA was actually filtered for RSV not SARS-CoV-2.
 
 **sample_matrix**: Wastewater matrix from which the sample was collected. Wastewater matrix is a categorical variable specifying the type of wastewater sample used (e.g., raw influent, primary sludge, settled solids).
 
+***wval***:The calculated site wastewater viral activity level (WVAL) for the CDC/MMWR reporting week.
 
+***wval_category***:	Category for the calculated site WVAL for the CDC/MMWR reporting week. Categories are ordinal based on pathogen specific cut-offs of WVAL values: very low, low, moderate, high, very high; and includes a 'limited/no data' category when there is insufficient data to calculate a WVAL.
 
 
 
