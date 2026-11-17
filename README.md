@@ -1,13 +1,13 @@
-# DATA 550 Midterm Project: RSV  Wastewater Surveillance in Georgia
+# DATA 550 Midterm Project: Sars-Cov-2 Wastewater Surveillance 
 
 ## Project Description
 
-This project uses CDC RSV wastewater surveillance data from Georgia. We aim to examine county-level wastewater data and understand how RSV activity levels vary across Georgia counties and over a six-month period.
+This project uses CDC Sars-Cov-2 wastewater surveillance data from Georgia. We aim to examine county-level wastewater data and understand how Sars-cov-2 activity levels vary across Georgia counties and over a six-month period.
 
 The report will include:
 - Table 1: Descriptive analysis of the wastewater surveillance data
-- Figure 1: Map showing RSV wastewater surveillance across Georgia counties
-- Figure 2: RSV activity levels in Georgia over six months
+- Figure 1: Map showing Sars-Cov-2 wastewater surveillance across Georgia counties
+- Figure 2: Sars-Cov-2activity levels in Georgia over six months
 
 ## Team Members
 
@@ -28,8 +28,8 @@ The report will include:
 
 ## Data Source
 
-CDC RSV wastewater surveillance data, subsetted to Georgia.
-## DISCLAIMER: DATA was actually filtered for RSV not SARS-CoV-2. 
+CDC sars-cov-2 wastewater surveillance data, subsetted to Georgia.
+
 
 
 **record_id**: A unique identifier for each row of data.

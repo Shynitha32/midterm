@@ -16,8 +16,8 @@ here::i_am("code/00_clean_data.R")
 
 
 ## Load data 
-df_raw <- read_csv("data/raw/ga_sars_cov2_wastewater.csv", show_col_types = FALSE)
-
+df_raw <- read_csv("data/raw/CDC_Wastewater_Data_for_SARS-CoV-2_GA.csv")
+glimpse(df_raw)
 
 to_num <- function(x) {
   as.numeric(str_remove_all(as.character(x), ","))
