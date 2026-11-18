@@ -8,36 +8,53 @@ data <- readRDS(
 )
 
 library(gtsummary)
-library(gt)
 library(tidyverse)
 library(knitr)
 
-table_one <- data |>
+wastewater_table <- data |>
+  mutate(
+    wval_category = factor(
+      wval_category,
+      levels = c(
+        "Very Low",
+        "Low",
+        "Moderate",
+        "High",
+        "Very High"
+      )
+    ),
+    sample_matrix = recode(
+      sample_matrix,
+      "post grit removal" = "Post Grit Removal",
+      "primary sludge" = "Primary Sludge",
+      "raw wastewater" = "Raw Wastewater"
+    )
+  )
+
+table_one <- wastewater_table |>
   select(
-    pcr_target,
-    population_served,
     wval,
-    wval_category
+    wval_category,
+    pcr_target_detect,
+    sample_matrix
   ) |>
   tbl_summary(
-    by = pcr_target,
     statistic = list(
-      population_served ~ "{median} ({p25}, {p75})",
       wval ~ "{median} ({p25}, {p75})",
-      wval_category ~ "{n} ({p}%)"
+      all_categorical() ~ "{n} ({p}%)"
     ),
     label = list(
-      population_served ~ "Population Served",
       wval ~ "Wastewater Viral Activity Level",
-      wval_category ~ "Viral Activity Category"
+      wval_category ~ "Viral Activity Category",
+      pcr_target_detect ~ "SARS-CoV-2 Detected",
+      sample_matrix ~ "Sample Matrix"
     ),
-    missing = "no"
+    missing = "ifany"
   ) |>
-#  add_overall() |>
   bold_labels() |>
   modify_caption(
-  "**Table 1. Wastewater Surveillance Characteristics by Pathogen Target**"
-)
+    "**Table 1. Characteristics of SARS-CoV-2 Wastewater Surveillance in Georgia**"
+  )
 
 table_one
 
@@ -45,30 +62,4 @@ saveRDS(
   table_one,
   file =
     here::here("output/table_one.rds")
-)
-
-table_two <- data |>
-  group_by(pcr_target) |>
-  summarize(
-    `Number of Observations` = n(),
-    `Unique Sites` = n_distinct(site),
-    `States/Territories Represented` = n_distinct(state_territory),
-    .groups = "drop"
-  )
-
-table_two <- table_two |>
-  gt() |>
-  cols_label(
-    pcr_target = "Pathogen"
-  ) |>
-  tab_header(
-    title = "Wastewater Surveillance Coverage by Pathogen"
-  )
-
-table_two
-
-saveRDS(
-  table_two,
-  file =
-    here::here("output/table_two.rds")
 )

@@ -30,8 +30,6 @@ The report will include:
 
 CDC sars-cov-2 wastewater surveillance data, subsetted to Georgia.
 
-
-
 **record_id**: A unique identifier for each row of data.
 
 **sample_collect_date**: Sample collection date YYYY-MM-DD
@@ -57,9 +55,6 @@ CDC sars-cov-2 wastewater surveillance data, subsetted to Georgia.
 ***wval***:The calculated site wastewater viral activity level (WVAL) for the CDC/MMWR reporting week.
 
 ***wval_category***:	Category for the calculated site WVAL for the CDC/MMWR reporting week. Categories are ordinal based on pathogen specific cut-offs of WVAL values: very low, low, moderate, high, very high; and includes a 'limited/no data' category when there is insufficient data to calculate a WVAL.
-
-
-
 
 ## Building the Report
 
