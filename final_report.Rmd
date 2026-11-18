@@ -33,21 +33,31 @@ This report utilizes the CDC Wastewater Viral Activity Level (WVAL), which recor
 
 ### Variables of interest:
 
-**record_id**: A unique identifier for each row of data.
+**record_id**: A unique identifier for each row of data
+
 **sample_collect_date**: Sample collection date YYYY-MM-DD
-**site**: A unique identifier for wastewater treatment plants.
+
+**site**: A unique identifier for wastewater treatment plants
+
 **state_territory**: Set to GA, state in which the wastewater treatment plant is located
-**source**: The source of the data submitted to NWSS (e.g, State_Territory, WastewaterSCAN, CDC_Verily, & CDC_Biobot).
+
+**source**: The source of the data submitted to NWSS (e.g, State_Territory, WastewaterSCAN, CDC_Verily, & CDC_Biobot)
+
 **counties_served**: The county and county-equivalent names corresponding to the FIPS codes in 'county_fips'
-**population_served**: Estimated number of persons served by this sampling site (i.e., served by this wastewater treatment plant or, if 'sample_location' is "upstream", then by this upstream location).
-**pcr_target**: The target of the PCR quantification (pathogen or antimicrobial resistance (AMR) groups).
-**sample_location**: Sample collection location in the wastewater system, whether at a wastewater treatment plant  or upstream in the wastewater system.
-**pcr_target_detect**: The target of the PCR quantification (pathogen or antimicrobial resistance (AMR) groups).
-**sample_matrix**: Wastewater matrix from which the sample was collected. Wastewater matrix is a categorical variable specifying the type of wastewater sample used (e.g., raw influent, primary sludge, settled solids).
-***wval***:The calculated site wastewater viral activity level (WVAL) for the CDC/MMWR reporting week.
-***wval_category***:	Category for the calculated site WVAL for the CDC/MMWR reporting week. Categories are ordinal based on pathogen specific cut-offs of WVAL values: very low, low, moderate, high, very high; and includes a 'limited/no data' category when there is insufficient data to calculate a WVAL.
 
+**population_served**: Estimated number of persons served by this sampling site (i.e., served by this wastewater treatment plant or, if 'sample_location' is "upstream", then by this upstream location)
 
+**pcr_target**: The target of the PCR quantification (pathogen or antimicrobial resistance (AMR) groups)
+
+**sample_location**: Sample collection location in the wastewater system, whether at a wastewater treatment plant  or upstream in the wastewater system
+
+**pcr_target_detect**: The target of the PCR quantification (pathogen or antimicrobial resistance (AMR) groups)
+
+**sample_matrix**: Wastewater matrix from which the sample was collected. Wastewater matrix is a categorical variable specifying the type of wastewater sample used (e.g., raw influent, primary sludge, settled solids)
+
+***wval***:The calculated site wastewater viral activity level (WVAL) for the CDC/MMWR reporting week
+
+***wval_category***:	Category for the calculated site WVAL for the CDC/MMWR reporting week. Categories are ordinal based on pathogen specific cut-offs of WVAL values: very low, low, moderate, high, very high; and includes a 'limited/no data' category when there is insufficient data to calculate a WVAL
 
 ```{r, load-data}
 here::i_am(
@@ -73,18 +83,7 @@ table_one
 ```
 
 ### Table One Description
-Across the 50,000 wastewater surveillance observations, Influenza A and RSV observations were predominantly classified as having very low viral activity (90% for both pathogens), whereas SARS-CoV-2 showed greater variability in viral activity, with 53% of observations classified as very low and a larger proportion classified as low, moderate, high, or very high. The median wastewater viral activity level was also higher for SARS-CoV-2 at 2.35 (IQR: 1.00–5.71), compared with 1.00 (IQR: 1.00–1.00) for both Influenza A and RSV.
-
-```{r table2, echo=FALSE}
-table_two <- readRDS(
-  file = here::here("output/table_two.rds")
-)
-
-table_two
-```
-
-### Table Two Description
-SARS-CoV-2 had the greatest surveillance coverage, with 18,289 observations from 1,215 unique wastewater sites across 52 states and territories. Influenza A included 16,323 observations from 1,082 sites and RSV included 15,388 observations from 1,027 sites. All three pathogens had broad geographic coverage, although SARS-CoV-2 had the largest number of observations and participating sites.
+Across 10,429 SARS-CoV-2 wastewater surveillance observations in Georgia, the median wastewater viral activity level was 2.6 (IQR: 1.1–5.6). Most observations were classified as having very low or low viral activity, 37% and 22% of observations, respectively, while 16% were classified as very high. SARS-CoV-2 was detected in 95% of observations. The most common sample matrix was raw wastewater (48%), followed by post-grit removal samples (41%), and primary sludge (11%).
 
 ## Visualizing Analysis
 
@@ -94,6 +93,9 @@ SARS-CoV-2 had the greatest surveillance coverage, with 18,289 observations from
 
 ## References
 https://www.cdc.gov/wastewater/about-data/index.html
+
 https://pmc-ncbi-nlm-nih-gov.proxy.library.emory.edu/articles/PMC11312382/
+
 https://www.nature.com/articles/s41370-024-00683-w#citeas
+
 https://www-cdc-gov.proxy.library.emory.edu/wastewater/about/wval.html
