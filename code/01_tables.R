@@ -56,8 +56,6 @@ table_one <- wastewater_table |>
     "**Table 1. Characteristics of SARS-CoV-2 Wastewater Surveillance in Georgia**"
   )
 
-table_one
-
 saveRDS(
   table_one,
   file =
