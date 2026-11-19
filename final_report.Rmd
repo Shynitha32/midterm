@@ -87,7 +87,7 @@ Across 10,429 SARS-CoV-2 wastewater surveillance observations in Georgia, the me
 
 ## Visualizing Analysis
 
-##Map 
+## Map 
 
 
 
@@ -99,7 +99,7 @@ knitr::include_graphics(
 )
 ```
 
-###Figure 2 Description 
+### Figure 2 Description 
 Figure 2 shows monthly average SARS-CoV-2 wastewater viral activity levels (WVAL) in Georgia from April 2022 to November 2026. Major peaks were observed around July 2022, January 2023, January 2024, and September 2026. Raw wastewater generally showed the highest peaks, reaching approximately 15 in July 2022 and 17–18 in September 2026. All three sample matrices showed similar increases and decreases over time, although raw wastewater had greater fluctuations. These findings highlight changes in SARS-CoV-2 wastewater viral activity over the study period, with no clear consistent seasonal pattern across all years.
 
 ## References
