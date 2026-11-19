@@ -7,7 +7,7 @@ This project uses CDC Sars-Cov-2 wastewater surveillance data from Georgia. We a
 The report will include:
 - Table 1: Descriptive analysis of the wastewater surveillance data
 - Figure 1: Map showing Sars-Cov-2 wastewater surveillance across Georgia counties
-- Figure 2: Sars-Cov-2activity levels in Georgia over six months
+- Figure 2: Sars-Cov-2activity levels in Georgia over time (April 2022 - November 2026)
 
 ## Team Members
 
